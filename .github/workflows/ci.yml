@@ -1,0 +1,31 @@
+name: Test PlivoVoiceKit iOS xcFramework
+
+on:
+  push:
+    branches: [ main, beta]
+    
+jobs:
+#   SwiftLint:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Github Action for SwiftLint
+#       uses: norio-nomura/action-swiftlint@3.0.1
+      
+  Test:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install git lfs
+      run: brew install git-lfs
+#     - name: Apple sign in
+#       uses: apple-actions/import-codesign-certs@v1
+#       with: 
+#         p12-file-base64: ${{ secrets.CERTIFICATES_P12 }}
+#         p12-password: ${{ secrets.CERTIFICATES_P12_PASSWORD }}
+    - name: Install pods
+      run: pod install
+    - name: Test plivo iOS SDK using simulator
+      run: sh test.sh
+    - name: Build and Merge Plivo iOS Binaries
+      run: sh build.sh     
