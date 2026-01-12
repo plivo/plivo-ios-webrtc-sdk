@@ -1,0 +1,16 @@
+PODS:
+  - PlivoWebRTC (1.1.4)
+
+DEPENDENCIES:
+  - PlivoWebRTC
+
+SPEC REPOS:
+  trunk:
+    - PlivoWebRTC
+
+SPEC CHECKSUMS:
+  PlivoWebRTC: d4b20ffad43b77cc38000a3170792dc46bbe84c8
+
+PODFILE CHECKSUM: 10c9612d8ed814eb1d10a1e9e7194d8f076a2cfa
+
+COCOAPODS: 1.12.0
